@@ -1,6 +1,7 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'hourly_forecast_item.dart';
+import 'additional_info.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -75,6 +76,7 @@ class WeatherScreen extends StatelessWidget {
               'Weather Forecast',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
             ),
+
             const SizedBox(height: 10),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -85,7 +87,7 @@ class WeatherScreen extends StatelessWidget {
                   HourlyForcastCard(),
                   HourlyForcastCard(),
                   HourlyForcastCard(),
-                  HourlyForcastCard()
+                  HourlyForcastCard(),
                 ],
               ),
             ),
@@ -97,36 +99,27 @@ class WeatherScreen extends StatelessWidget {
               'Additional Details',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
             ),
-            Placeholder(fallbackHeight: 50),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
-class HourlyForcastCard extends StatelessWidget {
-  const HourlyForcastCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      color: const Color.fromARGB(50, 255, 255, 255),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      child: Container(
-        width: 100,
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Text(
-              'time',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
-            ),
-            Icon(Icons.cloud, size: 40),
-            Text(
-              'tempe',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                AdditionalInfoItem(
+                  title: 'Wind Speed',
+                  value: '5 km/h',
+                  icon: Icons.air,
+                ),
+                AdditionalInfoItem(
+                  title: 'Humidity',
+                  value: '80%',
+                  icon: Icons.water_drop_outlined,
+                ),
+                AdditionalInfoItem(
+                  title: 'Pressure',
+                  value: '1000 hPa',
+                  icon: Icons.speed,
+                ),
+              ],
             ),
           ],
         ),
