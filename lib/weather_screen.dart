@@ -82,12 +82,36 @@ class WeatherScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  HourlyForcastCard(),
-                  HourlyForcastCard(),
-                  HourlyForcastCard(),
-                  HourlyForcastCard(),
-                  HourlyForcastCard(),
-                  HourlyForcastCard(),
+                  HourlyForcastCard(
+                    time: '00:00',
+                    icon: Icons.cloud,
+                    temperature: '25°C',
+                  ),
+                  HourlyForcastCard(
+                    time: '03:00',
+                    icon: Icons.cloud,
+                    temperature: '26°C',
+                  ),
+                  HourlyForcastCard(
+                    time: '06:00',
+                    icon: Icons.cloud,
+                    temperature: '27°C',
+                  ),
+                  HourlyForcastCard(
+                    time: '09:00',
+                    icon: Icons.cloud,
+                    temperature: '28°C',
+                  ),
+                  HourlyForcastCard(
+                    time: '12:00',
+                    icon: Icons.sunny,
+                    temperature: '29°C',
+                  ),
+                  HourlyForcastCard(
+                    time: '15:00',
+                    icon: Icons.sunny,
+                    temperature: '30°C',
+                  ),
                 ],
               ),
             ),
@@ -119,6 +143,7 @@ class WeatherScreen extends StatelessWidget {
                   value: '1000 hPa',
                   icon: Icons.speed,
                 ),
+                AdditionalInfoItem(title: 'Temperature', value: '25°C', icon: Icons.thermostat),
               ],
             ),
           ],
