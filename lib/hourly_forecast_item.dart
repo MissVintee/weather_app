@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HourlyForcastCard extends StatelessWidget {
+class HourlyForecastCard extends StatelessWidget {
 
   final String time;
   final IconData icon;
   final String temperature;
 
-  const HourlyForcastCard({
+  const HourlyForecastCard({
     super.key,
     required this.time,
     required this.icon,
@@ -25,6 +25,7 @@ class HourlyForcastCard extends StatelessWidget {
         child: Column(
           children: [
             Text(
+              maxLines: 1,
               time,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
             ),
